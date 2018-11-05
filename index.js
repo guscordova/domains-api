@@ -22,6 +22,11 @@ app.post('/domains', function(req, res) {
     res.send(`Successfully added ${req.body.name}`);
 });
 
+//GET all domains
+app.get('/domains', function(req, res){
+    res.send(domains);
+});
+
 //GET /domains/:domain_name
 app.get('/domain/:domain_name', function(req, res){
     let domain_name = req.params.domain_name;
