@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
-app.listen(port);
+app.listen(process.env.PORT || port);
  
 // Setup Storage
 let domains = [];
