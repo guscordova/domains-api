@@ -32,12 +32,13 @@ app.get('/domain/:domain_name', function(req, res){
     let domain_name = req.params.domain_name;
     let response;
 
-    domains.forEach(function(domain) {
-        if(domain.name == domain_name) {
-            response = domain;
-            return;
+    for(let i = 0; i < domains.length; i++) {
+        console.log(`Testing domain ${domains[i].name}`);
+        if(domains[i].name == domain_name) {
+            response = domains[i];
+            break;
         }
-    });
+    }
 
     if(!response) {
         res.sendStatus(400);
